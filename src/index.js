@@ -9,6 +9,10 @@ window.onload = function () {
   var display = document.getElementById('top_of_stack');
 
   pop.addEventListener('click', function () {
+    if (stack.peek() === 0) {
+      alert('Stacken är tom, finns inget att tömma!');
+      return;
+    }
     var text = 'Tog bort ' + stack.pop();
     alert(text);
   });
@@ -17,6 +21,11 @@ window.onload = function () {
     var x = prompt('Vad ska vi lägga på stacken?');
     stack.push(x);
     display.innerHTML = x;
+  });
+
+  reverse.addEventListener('click', function () {
+    stack.reverse();
+    display.innerHTML = stack.peek();
   });
 
   peek.addEventListener('click', function () {
