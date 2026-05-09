@@ -7,6 +7,9 @@ exports.push = function (x) {
 };
 
 exports.pop = function () {
+  if (stack.length === 0) {
+    return 'Stacken är tom, finns inget att tömma!';
+  }
   return stack.pop();
 };
 
@@ -15,5 +18,5 @@ exports.peek = function () {
 };
 
 exports.reverse = function () {
-  return stack(-1);
+  return stack.reverse();
 };

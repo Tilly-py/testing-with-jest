@@ -9,11 +9,12 @@ window.onload = function () {
   var display = document.getElementById('top_of_stack');
 
   pop.addEventListener('click', function () {
-    if (stack.peek() === 0) {
-      alert('Stacken är tom, finns inget att tömma!');
+    var popValue = stack.pop();
+    if (popValue === 'Stacken är tom, finns inget att tömma!') {
+      alert(popValue);
       return;
     }
-    var text = 'Tog bort ' + stack.pop();
+    var text = 'Tog bort ' + popValue;
     alert(text);
   });
 
